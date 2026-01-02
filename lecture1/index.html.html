@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masterclass: Digital Device Evaluation</title>
+  <style>
+    /* ========== THEME & REFINEMENT ========== */
+    :root {
+      --primary: #1f4ed8;
+      --secondary: #3f63ff;
+      --accent: #ffde59;
+      --dark: #0f172a;
+      --text: #334155;
+      --light-bg: #f8faff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ========== PARALLAX HERO ========== */
+    .hero {
+      height: 80vh;
+      background: linear-gradient(rgba(24, 58, 168, 0.8), rgba(31, 78, 216, 0.8)), 
+                  url('https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1500') center/cover fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      margin: 0;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin-top: 20px;
+    }
+
+    /* ========== VIDEO SECTION ========== */
+    .video-container {
+      max-width: 1000px;
+      margin: -100px auto 60px;
+      background: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      aspect-ratio: 16 / 9;
+      position: relative;
+      z-index: 10;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ========== CONTENT WRAPPER ========== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ========== SECTION STYLING ========== */
+    .section-title {
+      text-align: center;
+      margin: 80px 0 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: "";
+      width: 60%;
+      height: 4px;
+      background: var(--accent);
+      position: absolute;
+      bottom: -10px;
+      left: 20%;
+    }
+
+    /* ========== STEP BLOCKS ========== */
+    .step-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 100px;
+      align-items: center;
+    }
+
+    .step-block:nth-child(even) {
+      direction: rtl;
+    }
+
+    .step-block:nth-child(even) .content-side {
+      direction: ltr;
+    }
+
+    .image-side img {
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(31, 78, 216, 0.15);
+    }
+
+    .content-side h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 15px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .explanation {
+      font-size: 1.1rem;
+      color: #475569;
+    }
+
+    /* ========== INTERACTIVE CALLOUTS ========== */
+    .callout {
+      background: white;
+      border-left: 8px solid var(--accent);
+      padding: 30px;
+      border-radius: 0 20px 20px 0;
+      margin: 30px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    /* ========== PROGRESS TRACKER ========== */
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 6px;
+      background: var(--accent);
+      z-index: 1000;
+      width: 0%;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    /* ========== MOBILE OPTIMIZATION ========== */
+    @media (max-width: 850px) {
+      .step-block { grid-template-columns: 1fr; gap: 30px; }
+      .video-container { margin-top: -50px; width: 95%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="topProgress"></div>
+
+<header class="hero">
+  <div class="badge" style="background:var(--accent); color:black;">LECTURE ONE</div>
+  <h1>Evaluation Mindset</h1>
+  <p>Transitioning from a casual user to a professional digital evaluator. Learn to see what others only use.</p>
+</header>
+
+<div class="video-container">
+  <iframe src="https://youtu.be/AH_ugxmLeUM?si=WKnZn0Rn-fN1rqdy" title="Introduction to UX Evaluation" allowfullscreen></iframe>
+</div>
+
+<div class="container">
+
+  <div class="section-title"><h2>01. The Psychological Hook</h2></div>
+  <div class="step-block">
+    <div class="content-side">
+      <div class="badge">5 MINS</div>
+      <h3>Harnessing Frustration</h3>
+      <div class="explanation">
+        <p>Before diving into theory, we must acknowledge the "Emotional Gap." Every student has experienced digital anger. By asking about the last app that made them angry, we identify the exact moment <strong>Marketing fails.</strong></p>
+        <div class="callout">
+          <strong></strong> "When you hit a broken button, you don't just feel annoyed; you lose trust in the entire brand. That loss of trust costs millions."
+        </div>
+      </div>
+    </div>
+    <div class="image-side">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800" alt="Team collaborating">
+    </div>
+  </div>
+
+  <div class="section-title"><h2>02. Defining the Interface</h2></div>
+  <div class="step-block">
+    <div class="image-side">
+      <img src="digitalinterface.jpg" alt="Digital interface design">
+    </div>
+    <div class="content-side">
+      <div class="badge">10 MINS</div>
+      <h3>The "Device" is Not Hardware</h3>
+      <div class="explanation">
+        <p>Students often confuse the device (Smartphone) with the experience (Interface). We redefine the <strong>Digital Device</strong> as any digital touchpoint where a user makes a decision.</p>
+        <ul>
+          <li><strong>Websites:</strong> The digital storefront.</li>
+          <li><strong>Apps:</strong> The functional tool.</li>
+          <li><strong>Platforms:</strong> The ecosystem.</li>
+        </ul>
+        <p><em> The phone is just a piece of glass; the interface is the soul of the product.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><h2>03. Evaluation vs. Usage</h2></div>
+  <div class="step-block">
+    <div class="content-side">
+      <div class="badge">10 MINS</div>
+      <h3>Becoming a "Digital Critic"</h3>
+      <div class="explanation">
+        <p>Using is passive consumption (low brain activity). Evaluating is active analysis (high brain activity). We teach students to ask <strong>"Why"</strong> instead of <strong>"What."</strong></p>
+        <div class="callout">
+          <strong>Key Message:</strong> "Usage is about how you feel. Evaluation is about how the user performs a task."
+        </div>
+        <p>Example: Comparing the checkout process of Amazon vs. a local small business site. Where does the user get lost?</p>
+      </div>
+    </div>
+    <div class="image-side">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" alt="Data analysis">
+    </div>
+  </div>
+
+  <div class="section-title"><h2>04. The Financial Impact</h2></div>
+  <div class="step-block">
+    <div class="image-side">
+        
+      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=800" alt="Business Growth">
+    </div>
+    <div class="content-side">
+      <div class="badge">15 MINS</div>
+      <h3>Lifecycle & Economics</h3>
+      <div class="explanation">
+        <p>Evaluation isn't just a "final check." It is a continuous loop. We explain that finding a bug <strong>before</strong> launch costs $100, but finding it <strong>after</strong> launch costs $10,000 in lost customers.</p>
+        <p><strong>The Evaluation Loop:</strong></p>
+        <p>1. Formative (During Design) <br>2. Summative (Before Launch) <br>3. Continuous (After Launch)</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--primary); color:white; padding: 60px; border-radius: 40px; text-align: center; margin: 80px 0;">
+    <h2>Final Guided Discussion</h2>
+    <p style="font-size: 1.2rem; max-width: 700px; margin: 20px auto;">Shift from User to Evaluator. What is one website you will never use again because of its poor interface?</p>
+    <div style="font-weight: bold; margin-top: 20px; color: var(--accent);"></div>
+  </div>
+
+</div>
+
+<footer>
+  <h3>Digital Marketing Masterclass</h3>
+  <p>Confidential Academic Material for Faculty and Students.</p>
+</footer>
+
+<script>
+  // Progress Bar Scroll Logic
+  window.onscroll = function() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("topProgress").style.width = scrolled + "%";
+  };
+</script>
+
+</body>
+</html>
